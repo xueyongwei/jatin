@@ -66,6 +66,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     func customNaviTitleView()  {
         let infoView = UIImageView()
         infoView.frame = CGRect(x: 0, y: 0, width: 88, height: 44)
+        infoView.contentMode = UIViewContentMode.scaleAspectFit
         infoView.image = UIImage(named: "logo")
         self.navigationItem.titleView = infoView;
     }
