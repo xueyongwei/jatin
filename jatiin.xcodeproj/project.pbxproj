@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3D76D9989D199D929B6DE52 /* Pods_jatiin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FB105B40769723BD01FDFB /* Pods_jatiin.framework */; };
+		DE17363A1FDA5F4D00685366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736391FDA5F4D00685366 /* AppDelegate.swift */; };
+		DE17363C1FDA5F4D00685366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17363B1FDA5F4D00685366 /* ViewController.swift */; };
+		DE17363F1FDA5F4D00685366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE17363D1FDA5F4D00685366 /* Main.storyboard */; };
+		DE1736411FDA5F4D00685366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1736401FDA5F4D00685366 /* Assets.xcassets */; };
+		DE1736441FDA5F4D00685366 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1736421FDA5F4D00685366 /* LaunchScreen.storyboard */; };
+		DE17364F1FDA5F4D00685366 /* jatiinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17364E1FDA5F4D00685366 /* jatiinTests.swift */; };
+		DE17365A1FDA5F4D00685366 /* jatiinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736591FDA5F4D00685366 /* jatiinUITests.swift */; };
+		DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736701FDA600E00685366 /* LeftMenuView.swift */; };
+		DE1736731FDA601E00685366 /* LeftMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1736721FDA601E00685366 /* LeftMenuView.xib */; };
+		DE1736751FDA665E00685366 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736741FDA665E00685366 /* LeftMenuTableViewController.swift */; };
+		DE1736771FDA735D00685366 /* AcountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736761FDA735D00685366 /* AcountTableViewController.swift */; };
+		DE1736791FDA74DD00685366 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1736781FDA74DD00685366 /* Auth.storyboard */; };
+		DE17367B1FDA755A00685366 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DE17367A1FDA755A00685366 /* logo.png */; };
+		DE17367D1FDA794F00685366 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17367C1FDA794F00685366 /* LoginViewController.swift */; };
+		DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17367E1FDA795700685366 /* RegisterViewController.swift */; };
+		DE1736811FDA796200685366 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */; };
+		DE1736831FDA7CCB00685366 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736821FDA7CCB00685366 /* BaseViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE17364B1FDA5F4D00685366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE17362E1FDA5F4D00685366 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1736351FDA5F4D00685366;
+			remoteInfo = jatiin;
+		};
+		DE1736561FDA5F4D00685366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE17362E1FDA5F4D00685366 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1736351FDA5F4D00685366;
+			remoteInfo = jatiin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4B54828D9D5E02D0E61CBDC2 /* Pods-jatiin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jatiin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jatiin/Pods-jatiin.debug.xcconfig"; sourceTree = "<group>"; };
+		6A06337BE639FC1BC4FF4192 /* Pods-jatiin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jatiin.release.xcconfig"; path = "Pods/Target Support Files/Pods-jatiin/Pods-jatiin.release.xcconfig"; sourceTree = "<group>"; };
+		72FB105B40769723BD01FDFB /* Pods_jatiin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jatiin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1736361FDA5F4D00685366 /* jatiin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jatiin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1736391FDA5F4D00685366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE17363B1FDA5F4D00685366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE17363E1FDA5F4D00685366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE1736401FDA5F4D00685366 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE1736431FDA5F4D00685366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE1736451FDA5F4D00685366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE17364A1FDA5F4D00685366 /* jatiinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jatiinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE17364E1FDA5F4D00685366 /* jatiinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jatiinTests.swift; sourceTree = "<group>"; };
+		DE1736501FDA5F4D00685366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1736551FDA5F4D00685366 /* jatiinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jatiinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1736591FDA5F4D00685366 /* jatiinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jatiinUITests.swift; sourceTree = "<group>"; };
+		DE17365B1FDA5F4D00685366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1736701FDA600E00685366 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		DE1736721FDA601E00685366 /* LeftMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuView.xib; sourceTree = "<group>"; };
+		DE1736741FDA665E00685366 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
+		DE1736761FDA735D00685366 /* AcountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountTableViewController.swift; sourceTree = "<group>"; };
+		DE1736781FDA74DD00685366 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		DE17367A1FDA755A00685366 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		DE17367C1FDA794F00685366 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DE17367E1FDA795700685366 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		DE1736821FDA7CCB00685366 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE1736331FDA5F4D00685366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3D76D9989D199D929B6DE52 /* Pods_jatiin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736471FDA5F4D00685366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736521FDA5F4D00685366 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57C6140BC3E66EBC0DB57E27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72FB105B40769723BD01FDFB /* Pods_jatiin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A66AB93FFDB476AEB406311B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B54828D9D5E02D0E61CBDC2 /* Pods-jatiin.debug.xcconfig */,
+				6A06337BE639FC1BC4FF4192 /* Pods-jatiin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE17362D1FDA5F4D00685366 = {
+			isa = PBXGroup;
+			children = (
+				DE1736381FDA5F4D00685366 /* jatiin */,
+				DE17364D1FDA5F4D00685366 /* jatiinTests */,
+				DE1736581FDA5F4D00685366 /* jatiinUITests */,
+				DE1736371FDA5F4D00685366 /* Products */,
+				A66AB93FFDB476AEB406311B /* Pods */,
+				57C6140BC3E66EBC0DB57E27 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE1736371FDA5F4D00685366 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE1736361FDA5F4D00685366 /* jatiin.app */,
+				DE17364A1FDA5F4D00685366 /* jatiinTests.xctest */,
+				DE1736551FDA5F4D00685366 /* jatiinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE1736381FDA5F4D00685366 /* jatiin */ = {
+			isa = PBXGroup;
+			children = (
+				DE17366E1FDA5FF100685366 /* controllers */,
+				DE17366F1FDA5FF100685366 /* model */,
+				DE17366D1FDA5FF100685366 /* view */,
+				DE1736391FDA5F4D00685366 /* AppDelegate.swift */,
+				DE17363B1FDA5F4D00685366 /* ViewController.swift */,
+				DE1736761FDA735D00685366 /* AcountTableViewController.swift */,
+				DE17363D1FDA5F4D00685366 /* Main.storyboard */,
+				DE1736781FDA74DD00685366 /* Auth.storyboard */,
+				DE1736401FDA5F4D00685366 /* Assets.xcassets */,
+				DE17367A1FDA755A00685366 /* logo.png */,
+				DE1736421FDA5F4D00685366 /* LaunchScreen.storyboard */,
+				DE1736451FDA5F4D00685366 /* Info.plist */,
+			);
+			path = jatiin;
+			sourceTree = "<group>";
+		};
+		DE17364D1FDA5F4D00685366 /* jatiinTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE17364E1FDA5F4D00685366 /* jatiinTests.swift */,
+				DE1736501FDA5F4D00685366 /* Info.plist */,
+			);
+			path = jatiinTests;
+			sourceTree = "<group>";
+		};
+		DE1736581FDA5F4D00685366 /* jatiinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE1736591FDA5F4D00685366 /* jatiinUITests.swift */,
+				DE17365B1FDA5F4D00685366 /* Info.plist */,
+			);
+			path = jatiinUITests;
+			sourceTree = "<group>";
+		};
+		DE17366D1FDA5FF100685366 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DE1736701FDA600E00685366 /* LeftMenuView.swift */,
+				DE1736721FDA601E00685366 /* LeftMenuView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DE17366E1FDA5FF100685366 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE1736821FDA7CCB00685366 /* BaseViewController.swift */,
+				DE1736741FDA665E00685366 /* LeftMenuTableViewController.swift */,
+				DE17367C1FDA794F00685366 /* LoginViewController.swift */,
+				DE17367E1FDA795700685366 /* RegisterViewController.swift */,
+				DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		DE17366F1FDA5FF100685366 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE1736351FDA5F4D00685366 /* jatiin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE17365E1FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiin" */;
+			buildPhases = (
+				7B34699F4B3987AF37A4E9F4 /* [CP] Check Pods Manifest.lock */,
+				DE1736321FDA5F4D00685366 /* Sources */,
+				DE1736331FDA5F4D00685366 /* Frameworks */,
+				DE1736341FDA5F4D00685366 /* Resources */,
+				42968DECB307532D94429033 /* [CP] Embed Pods Frameworks */,
+				B3C916BCFD4FD360D0E37B27 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jatiin;
+			productName = jatiin;
+			productReference = DE1736361FDA5F4D00685366 /* jatiin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE1736491FDA5F4D00685366 /* jatiinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1736611FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiinTests" */;
+			buildPhases = (
+				DE1736461FDA5F4D00685366 /* Sources */,
+				DE1736471FDA5F4D00685366 /* Frameworks */,
+				DE1736481FDA5F4D00685366 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE17364C1FDA5F4D00685366 /* PBXTargetDependency */,
+			);
+			name = jatiinTests;
+			productName = jatiinTests;
+			productReference = DE17364A1FDA5F4D00685366 /* jatiinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE1736541FDA5F4D00685366 /* jatiinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1736641FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiinUITests" */;
+			buildPhases = (
+				DE1736511FDA5F4D00685366 /* Sources */,
+				DE1736521FDA5F4D00685366 /* Frameworks */,
+				DE1736531FDA5F4D00685366 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1736571FDA5F4D00685366 /* PBXTargetDependency */,
+			);
+			name = jatiinUITests;
+			productName = jatiinUITests;
+			productReference = DE1736551FDA5F4D00685366 /* jatiinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE17362E1FDA5F4D00685366 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = xueyongwei;
+				TargetAttributes = {
+					DE1736351FDA5F4D00685366 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					DE1736491FDA5F4D00685366 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DE1736351FDA5F4D00685366;
+					};
+					DE1736541FDA5F4D00685366 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DE1736351FDA5F4D00685366;
+					};
+				};
+			};
+			buildConfigurationList = DE1736311FDA5F4D00685366 /* Build configuration list for PBXProject "jatiin" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE17362D1FDA5F4D00685366;
+			productRefGroup = DE1736371FDA5F4D00685366 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE1736351FDA5F4D00685366 /* jatiin */,
+				DE1736491FDA5F4D00685366 /* jatiinTests */,
+				DE1736541FDA5F4D00685366 /* jatiinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE1736341FDA5F4D00685366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1736731FDA601E00685366 /* LeftMenuView.xib in Resources */,
+				DE1736441FDA5F4D00685366 /* LaunchScreen.storyboard in Resources */,
+				DE17367B1FDA755A00685366 /* logo.png in Resources */,
+				DE1736791FDA74DD00685366 /* Auth.storyboard in Resources */,
+				DE1736411FDA5F4D00685366 /* Assets.xcassets in Resources */,
+				DE17363F1FDA5F4D00685366 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736481FDA5F4D00685366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736531FDA5F4D00685366 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42968DECB307532D94429033 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-jatiin/Pods-jatiin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jatiin/Pods-jatiin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B34699F4B3987AF37A4E9F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-jatiin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3C916BCFD4FD360D0E37B27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-jatiin/Pods-jatiin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE1736321FDA5F4D00685366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE17367D1FDA794F00685366 /* LoginViewController.swift in Sources */,
+				DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */,
+				DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */,
+				DE1736751FDA665E00685366 /* LeftMenuTableViewController.swift in Sources */,
+				DE1736771FDA735D00685366 /* AcountTableViewController.swift in Sources */,
+				DE1736831FDA7CCB00685366 /* BaseViewController.swift in Sources */,
+				DE17363C1FDA5F4D00685366 /* ViewController.swift in Sources */,
+				DE1736811FDA796200685366 /* ForgetPasswordViewController.swift in Sources */,
+				DE17363A1FDA5F4D00685366 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736461FDA5F4D00685366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE17364F1FDA5F4D00685366 /* jatiinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1736511FDA5F4D00685366 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE17365A1FDA5F4D00685366 /* jatiinUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE17364C1FDA5F4D00685366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1736351FDA5F4D00685366 /* jatiin */;
+			targetProxy = DE17364B1FDA5F4D00685366 /* PBXContainerItemProxy */;
+		};
+		DE1736571FDA5F4D00685366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1736351FDA5F4D00685366 /* jatiin */;
+			targetProxy = DE1736561FDA5F4D00685366 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE17363D1FDA5F4D00685366 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE17363E1FDA5F4D00685366 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE1736421FDA5F4D00685366 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE1736431FDA5F4D00685366 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE17365C1FDA5F4D00685366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE17365D1FDA5F4D00685366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE17365F1FDA5F4D00685366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B54828D9D5E02D0E61CBDC2 /* Pods-jatiin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE1736601FDA5F4D00685366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A06337BE639FC1BC4FF4192 /* Pods-jatiin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE1736621FDA5F4D00685366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jatiin.app/jatiin";
+			};
+			name = Debug;
+		};
+		DE1736631FDA5F4D00685366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiinTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jatiin.app/jatiin";
+			};
+			name = Release;
+		};
+		DE1736651FDA5F4D00685366 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = jatiin;
+			};
+			name = Debug;
+		};
+		DE1736661FDA5F4D00685366 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = jatiinUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiinUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = jatiin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE1736311FDA5F4D00685366 /* Build configuration list for PBXProject "jatiin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE17365C1FDA5F4D00685366 /* Debug */,
+				DE17365D1FDA5F4D00685366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE17365E1FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE17365F1FDA5F4D00685366 /* Debug */,
+				DE1736601FDA5F4D00685366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1736611FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1736621FDA5F4D00685366 /* Debug */,
+				DE1736631FDA5F4D00685366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1736641FDA5F4D00685366 /* Build configuration list for PBXNativeTarget "jatiinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1736651FDA5F4D00685366 /* Debug */,
+				DE1736661FDA5F4D00685366 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE17362E1FDA5F4D00685366 /* Project object */;
+}

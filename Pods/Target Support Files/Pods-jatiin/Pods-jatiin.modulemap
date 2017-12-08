@@ -1,0 +1,6 @@
+framework module Pods_jatiin {
+  umbrella header "Pods-jatiin-umbrella.h"
+
+  export *
+  module * { export * }
+}
