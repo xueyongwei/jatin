@@ -16,7 +16,6 @@
 		DE17364F1FDA5F4D00685366 /* jatiinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17364E1FDA5F4D00685366 /* jatiinTests.swift */; };
 		DE17365A1FDA5F4D00685366 /* jatiinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736591FDA5F4D00685366 /* jatiinUITests.swift */; };
 		DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736701FDA600E00685366 /* LeftMenuView.swift */; };
-		DE1736731FDA601E00685366 /* LeftMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1736721FDA601E00685366 /* LeftMenuView.xib */; };
 		DE1736751FDA665E00685366 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736741FDA665E00685366 /* LeftMenuTableViewController.swift */; };
 		DE1736771FDA735D00685366 /* AcountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736761FDA735D00685366 /* AcountTableViewController.swift */; };
 		DE1736791FDA74DD00685366 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1736781FDA74DD00685366 /* Auth.storyboard */; };
@@ -30,6 +29,7 @@
 		DE1736891FDA87B500685366 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736881FDA87B500685366 /* MyAccountViewController.swift */; };
 		DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368A1FDA87C800685366 /* CouponsViewController.swift */; };
 		DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368C1FDA87F900685366 /* MainViewManager.swift */; };
+		DE17368F1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		DE1736591FDA5F4D00685366 /* jatiinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jatiinUITests.swift; sourceTree = "<group>"; };
 		DE17365B1FDA5F4D00685366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE1736701FDA600E00685366 /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
-		DE1736721FDA601E00685366 /* LeftMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuView.xib; sourceTree = "<group>"; };
 		DE1736741FDA665E00685366 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		DE1736761FDA735D00685366 /* AcountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcountTableViewController.swift; sourceTree = "<group>"; };
 		DE1736781FDA74DD00685366 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		DE1736881FDA87B500685366 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		DE17368A1FDA87C800685366 /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
 		DE17368C1FDA87F900685366 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
+		DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuManagerViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				DE1736701FDA600E00685366 /* LeftMenuView.swift */,
-				DE1736721FDA601E00685366 /* LeftMenuView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -206,6 +205,7 @@
 				DE1736861FDA879800685366 /* HelpViewController.swift */,
 				DE1736881FDA87B500685366 /* MyAccountViewController.swift */,
 				DE17368A1FDA87C800685366 /* CouponsViewController.swift */,
+				DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -328,7 +328,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE1736731FDA601E00685366 /* LeftMenuView.xib in Resources */,
 				DE1736441FDA5F4D00685366 /* LaunchScreen.storyboard in Resources */,
 				DE17367B1FDA755A00685366 /* logo.png in Resources */,
 				DE1736791FDA74DD00685366 /* Auth.storyboard in Resources */,
@@ -432,6 +431,7 @@
 				DE17363C1FDA5F4D00685366 /* ViewController.swift in Sources */,
 				DE1736811FDA796200685366 /* ForgetPasswordViewController.swift in Sources */,
 				DE17363A1FDA5F4D00685366 /* AppDelegate.swift in Sources */,
+				DE17368F1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

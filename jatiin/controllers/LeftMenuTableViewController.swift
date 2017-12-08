@@ -10,9 +10,14 @@ import UIKit
 protocol LeftMenuTableViewControllerDelegate:NSObjectProtocol {
     func LeftMenuTableViewControllerDidSelectedIndexPath(indexPath:IndexPath)
 }
+
+public let kLeftMenuTableViewClickIndexNotiName = "kLeftMenuTableViewClickIndexNotiName"
+
 class LeftMenuTableViewController: UITableViewController {
 
     weak var deletage: LeftMenuTableViewControllerDelegate?
+    
+    
     
     private var haveInit = false
     
@@ -31,12 +36,16 @@ class LeftMenuTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !haveInit {
-            print("viewDidAppear haveInit")
-//            self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.top)
-            self .tableView(self.tableView, didSelectRowAt: IndexPath.init(row: 0, section: 0))
-            haveInit = true
-        }
+//        if !haveInit {
+//            print("viewDidAppear haveInit")
+//            let firstRow = IndexPath.init(row: 0, section: 0)
+//            self.tableView(tableView, didSelectRowAt: firstRow)
+////
+////            self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.top)
+//            self.tableView(self.tableView, didSelectRowAt: firstRow)
+//            haveInit = true
+//        }
+        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +66,11 @@ class LeftMenuTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.deletage?.LeftMenuTableViewControllerDidSelectedIndexPath(indexPath: indexPath)
+       
+//        self.deletage?.LeftMenuTableViewControllerDidSelectedIndexPath(indexPath: indexPath)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLeftMenuTableViewClickIndexNotiName), object: indexPath, userInfo: nil)
+        
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

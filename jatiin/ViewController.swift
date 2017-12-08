@@ -14,11 +14,6 @@ public let kChangeMainViewNotificationName = "ChangeMainViewNotificationName"
 class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
 
     @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var leftMenuView: UIView!
-    
-    @IBOutlet weak var leftMenuCotainView: UIView!
-    
-    @IBOutlet weak var leftMenuCotainViewLeadingConst: NSLayoutConstraint!
  
 //    var leftMenuViewTableViewController :LeftMenuTableViewControllerDelegate?
     
@@ -27,10 +22,8 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     
     var currentChildrenViewControllerIndex :Int = 0
     
-    lazy var leftMenuViewTableViewController :LeftMenuTableViewController = {
-        let vc:LeftMenuTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftMenuTableViewController") as! LeftMenuTableViewController
-        vc.deletage = self
-        return vc
+    lazy var leftMenuManager :LeftMenuManagerViewViewController = {
+        return LeftMenuManagerViewViewController()
     }()
     
     
@@ -39,6 +32,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
         self.customLeftMenuViewController()
         self.customRightBarItem()
+        self.customNaviTitleView()
         
         self.checkAuth()
         
@@ -56,24 +50,25 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeMainView), name: NSNotification.Name(kChangeMainViewNotificationName), object: nil)
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(leftMenuTableViewCLick(noti:)), name: NSNotification.Name(kLeftMenuTableViewClickIndexNotiName), object: nil)
     }
     //MARK: custom
     func customLeftMenuViewController() {
-        self.addChildViewController(self.leftMenuViewTableViewController)
-        self.leftMenuCotainView.addSubview(self.leftMenuViewTableViewController.view)
-        self.leftMenuViewTableViewController.view.snp.makeConstraints { (maker) in
-            maker.leading.trailing.top.bottom.equalTo(0)
-        }
         
         self.childrenViewControllerClassNames = ["CouponsViewController","MyAccountViewController","PartnersViewController","HelpViewController"]
+        
         for className in self.childrenViewControllerClassNames! {
             let cvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: className)
             self.addChildViewController(cvc)
         }
         
     }
-    
+    func customNaviTitleView()  {
+        let infoView = UIImageView()
+        infoView.frame = CGRect(x: 0, y: 0, width: 88, height: 44)
+        infoView.image = UIImage(named: "logo")
+        self.navigationItem.titleView = infoView;
+    }
     func customRightBarItem() {
         let infoView = UIView()
         infoView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
@@ -120,19 +115,26 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     @objc func initDataRequest() {
         
     }
+    @objc func leftMenuTableViewCLick(noti:Notification){
+        let indexPath = noti.object as! NSIndexPath
+        self.changeMainView(toIndex: indexPath.section)
+//        self.leftMenuManager.hiddenMenu()
+        self.menuCLick(self.menuButton)
+    }
     
     @objc func changeMainView(toIndex:Int) {
         
         guard toIndex != currentChildrenViewControllerIndex else {
             return
         }
+        currentChildrenViewControllerIndex = toIndex
         
         let curtVC = self.childViewControllers[currentChildrenViewControllerIndex]
         curtVC.view.removeFromSuperview()
         
         let toVC = self.childViewControllers[toIndex]
-        self.view.addSubview(toVC.view)
-        
+//        self.view.addSubview(toVC.view)
+        self.view.insertSubview(toVC.view, belowSubview: self.leftMenuManager.view)
         toVC.view.snp.makeConstraints { (maker) in
             maker.trailing.leading.bottom.top.equalTo(0)
         }
@@ -144,28 +146,21 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
         sender.isSelected = !sender.isSelected
         sender.isUserInteractionEnabled = false
-        var leadingConst:CGFloat = 0
-        var alpha:CGFloat = 1
         
-        if self.leftMenuView.alpha == 1 {
-            leadingConst = -UIScreen.main.bounds.size.width*0.5
-            alpha = 0
+        if sender.isSelected {
+            self.leftMenuManager.showMenu(onView: self.view)
+        }else{
+            self.leftMenuManager.hiddenMenu()
         }
-        
-        self.leftMenuCotainViewLeadingConst.constant = leadingConst
-        self.leftMenuViewTableViewController.view.snp.updateConstraints { (maker) in
-            maker.leading.equalTo(leadingConst)
-        }
-    
         UIView.animate(withDuration: 0.3, animations: {
-            self.leftMenuView.alpha = alpha
-            self.view.layoutIfNeeded()
+            
         }) { (finished) in
             if finished == true{
-                self.menuButton.isUserInteractionEnabled = true
-                self.leftMenuViewTableViewController.view.isHidden = !sender.isSelected
+                sender.isUserInteractionEnabled = true
             }
         }
+        return
+        
     }
     
     @objc func onInfoTap() {
