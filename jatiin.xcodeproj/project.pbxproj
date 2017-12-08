@@ -25,6 +25,11 @@
 		DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17367E1FDA795700685366 /* RegisterViewController.swift */; };
 		DE1736811FDA796200685366 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */; };
 		DE1736831FDA7CCB00685366 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736821FDA7CCB00685366 /* BaseViewController.swift */; };
+		DE1736851FDA878900685366 /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736841FDA878900685366 /* PartnersViewController.swift */; };
+		DE1736871FDA879800685366 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736861FDA879800685366 /* HelpViewController.swift */; };
+		DE1736891FDA87B500685366 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736881FDA87B500685366 /* MyAccountViewController.swift */; };
+		DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368A1FDA87C800685366 /* CouponsViewController.swift */; };
+		DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368C1FDA87F900685366 /* MainViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,11 @@
 		DE17367E1FDA795700685366 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		DE1736821FDA7CCB00685366 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE1736841FDA878900685366 /* PartnersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
+		DE1736861FDA879800685366 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		DE1736881FDA87B500685366 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		DE17368A1FDA87C800685366 /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		DE17368C1FDA87F900685366 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,10 @@
 				DE17367C1FDA794F00685366 /* LoginViewController.swift */,
 				DE17367E1FDA795700685366 /* RegisterViewController.swift */,
 				DE1736801FDA796200685366 /* ForgetPasswordViewController.swift */,
+				DE1736841FDA878900685366 /* PartnersViewController.swift */,
+				DE1736861FDA879800685366 /* HelpViewController.swift */,
+				DE1736881FDA87B500685366 /* MyAccountViewController.swift */,
+				DE17368A1FDA87C800685366 /* CouponsViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 		DE17366F1FDA5FF100685366 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				DE17368C1FDA87F900685366 /* MainViewManager.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -403,9 +418,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1736871FDA879800685366 /* HelpViewController.swift in Sources */,
 				DE17367D1FDA794F00685366 /* LoginViewController.swift in Sources */,
+				DE1736891FDA87B500685366 /* MyAccountViewController.swift in Sources */,
+				DE1736851FDA878900685366 /* PartnersViewController.swift in Sources */,
 				DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */,
+				DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */,
 				DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */,
+				DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */,
 				DE1736751FDA665E00685366 /* LeftMenuTableViewController.swift in Sources */,
 				DE1736771FDA735D00685366 /* AcountTableViewController.swift in Sources */,
 				DE1736831FDA7CCB00685366 /* BaseViewController.swift in Sources */,

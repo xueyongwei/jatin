@@ -35,11 +35,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-iX-V2P">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-iX-V2P">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVj-Wz-kf4">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="603"/>
+                                        <rect key="frame" x="-500" y="0.0" width="150" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -48,7 +48,7 @@
                                     <constraint firstItem="gVj-Wz-kf4" firstAttribute="width" secondItem="qb4-iX-V2P" secondAttribute="width" multiplier="0.4" id="8ks-GP-eHp"/>
                                     <constraint firstItem="gVj-Wz-kf4" firstAttribute="top" secondItem="qb4-iX-V2P" secondAttribute="top" id="Rm9-ys-Jhy"/>
                                     <constraint firstAttribute="bottom" secondItem="gVj-Wz-kf4" secondAttribute="bottom" id="o4j-lU-XkM"/>
-                                    <constraint firstItem="gVj-Wz-kf4" firstAttribute="leading" secondItem="qb4-iX-V2P" secondAttribute="leading" id="vrm-Ri-Tys"/>
+                                    <constraint firstItem="gVj-Wz-kf4" firstAttribute="leading" secondItem="qb4-iX-V2P" secondAttribute="leading" constant="-500" id="vrm-Ri-Tys"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -63,10 +63,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="urR-9R-fSe">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="XyO-Cc-q15">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Eg-dr-6bD">
-                                <rect key="frame" x="16" y="7" width="46" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Eg-dr-6bD">
+                                <rect key="frame" x="16" y="5" width="46" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="三"/>
+                                <state key="normal" title="三">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" title="X"/>
                                 <connections>
                                     <action selector="menuCLick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Id9-56-vrc"/>
                                 </connections>
@@ -112,11 +115,72 @@
                         <outlet property="leftMenuCotainView" destination="gVj-Wz-kf4" id="brE-0K-U6n"/>
                         <outlet property="leftMenuCotainViewLeadingConst" destination="vrm-Ri-Tys" id="Bu1-br-r54"/>
                         <outlet property="leftMenuView" destination="qb4-iX-V2P" id="fMR-xo-4ic"/>
+                        <outlet property="menuButton" destination="4Eg-dr-6bD" id="4Ao-l2-Ga5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.8" y="132.68365817091455"/>
+        </scene>
+        <!--Coupons View Controller-->
+        <scene sceneID="lPs-1W-YfH">
+            <objects>
+                <viewController storyboardIdentifier="CouponsViewController" id="Yfy-WP-aFp" customClass="CouponsViewController" customModule="jatiin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uMA-VR-Rne">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g29-Xq-c8g"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZUA-mm-W9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-402" y="1161"/>
+        </scene>
+        <!--My Account View Controller-->
+        <scene sceneID="5wb-0s-QTd">
+            <objects>
+                <viewController storyboardIdentifier="MyAccountViewController" id="CEX-45-PEx" customClass="MyAccountViewController" customModule="jatiin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fUW-fQ-SLV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="eWo-JW-9vM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vv-W9-ey0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="542" y="1162"/>
+        </scene>
+        <!--Partners View Controller-->
+        <scene sceneID="Jcr-Uv-hM6">
+            <objects>
+                <viewController storyboardIdentifier="PartnersViewController" id="vtZ-gf-GV8" customClass="PartnersViewController" customModule="jatiin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ic-eb-EId">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="BWj-WK-5oV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIT-lU-Qs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="1161"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="27c-U2-ssy">
+            <objects>
+                <viewController storyboardIdentifier="HelpViewController" id="Gvf-1I-gBc" customClass="HelpViewController" customModule="jatiin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uyo-fe-e1f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="LNh-iV-h1i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELT-4h-NPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298" y="1161"/>
         </scene>
         <!--Left Menu Table View Controller-->
         <scene sceneID="p8y-J6-Jgl">
@@ -264,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NU7-vA-H9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1660" y="133"/>
+            <point key="canvasLocation" x="1862" y="133"/>
         </scene>
     </scenes>
 </document>

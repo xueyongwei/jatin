@@ -9,9 +9,11 @@
 import UIKit
 import SnapKit
 import YYKit
+public let kChangeMainViewNotificationName = "ChangeMainViewNotificationName"
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
 
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var leftMenuView: UIView!
     
     @IBOutlet weak var leftMenuCotainView: UIView!
@@ -20,8 +22,14 @@ class ViewController: UIViewController {
  
 //    var leftMenuViewTableViewController :LeftMenuTableViewControllerDelegate?
     
+    var childrenViewControllerInfo: [String:Any]?
+    var childrenViewControllerClassNames: [String]?
+    
+    var currentChildrenViewControllerIndex :Int = 0
+    
     lazy var leftMenuViewTableViewController :LeftMenuTableViewController = {
         let vc:LeftMenuTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LeftMenuTableViewController") as! LeftMenuTableViewController
+        vc.deletage = self
         return vc
     }()
     
@@ -34,17 +42,38 @@ class ViewController: UIViewController {
         
         self.checkAuth()
         
+        self.registNotificationCenter()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    func registNotificationCenter()  {
+        NotificationCenter.default.addObserver(self, selector: #selector(initDataRequest), name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeMainView), name: NSNotification.Name(kChangeMainViewNotificationName), object: nil)
+        
+        
+    }
+    //MARK: custom
     func customLeftMenuViewController() {
         self.addChildViewController(self.leftMenuViewTableViewController)
         self.leftMenuCotainView.addSubview(self.leftMenuViewTableViewController.view)
         self.leftMenuViewTableViewController.view.snp.makeConstraints { (maker) in
             maker.leading.trailing.top.bottom.equalTo(0)
         }
+        
+        self.childrenViewControllerClassNames = ["CouponsViewController","MyAccountViewController","PartnersViewController","HelpViewController"]
+        for className in self.childrenViewControllerClassNames! {
+            let cvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: className)
+            self.addChildViewController(cvc)
+        }
+        
     }
-
+    
     func customRightBarItem() {
         let infoView = UIView()
         infoView.frame = CGRect(x: 0, y: 0, width: 100, height: 44)
@@ -68,6 +97,7 @@ class ViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItem = rightBaritm
         
+        
     }
     
     func checkAuth() {
@@ -83,15 +113,37 @@ class ViewController: UIViewController {
             corver.removeFromSuperview()
         })
         
-        NotificationCenter.default.addObserver(self, selector: #selector(initDataRequest), name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
+        
         
     }
-   
+    //MARK: 回调事件
     @objc func initDataRequest() {
         
     }
+    
+    @objc func changeMainView(toIndex:Int) {
+        
+        guard toIndex != currentChildrenViewControllerIndex else {
+            return
+        }
+        
+        let curtVC = self.childViewControllers[currentChildrenViewControllerIndex]
+        curtVC.view.removeFromSuperview()
+        
+        let toVC = self.childViewControllers[toIndex]
+        self.view.addSubview(toVC.view)
+        
+        toVC.view.snp.makeConstraints { (maker) in
+            maker.trailing.leading.bottom.top.equalTo(0)
+        }
+        
+        
+    }
+    //MARK: 点击事件
     @IBAction func menuCLick(_ sender: UIButton) {
         
+        sender.isSelected = !sender.isSelected
+        sender.isUserInteractionEnabled = false
         var leadingConst:CGFloat = 0
         var alpha:CGFloat = 1
         
@@ -104,10 +156,15 @@ class ViewController: UIViewController {
         self.leftMenuViewTableViewController.view.snp.updateConstraints { (maker) in
             maker.leading.equalTo(leadingConst)
         }
-        
-        UIView.animate(withDuration: 0.3) {
+    
+        UIView.animate(withDuration: 0.3, animations: {
             self.leftMenuView.alpha = alpha
             self.view.layoutIfNeeded()
+        }) { (finished) in
+            if finished == true{
+                self.menuButton.isUserInteractionEnabled = true
+                self.leftMenuViewTableViewController.view.isHidden = !sender.isSelected
+            }
         }
     }
     
@@ -123,7 +180,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //MARK:LeftMenuTableViewControllerDelegate
+    
+    func LeftMenuTableViewControllerDidSelectedIndexPath(indexPath: IndexPath) {
+        self.changeMainView(toIndex: indexPath.row)
+        self.menuCLick(menuButton)
+    }
 
 }
 

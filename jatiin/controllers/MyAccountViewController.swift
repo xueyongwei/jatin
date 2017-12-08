@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  MyAccountViewController.swift
 //  jatiin
 //
 //  Created by 西方 on 2017/12/8.
@@ -8,18 +8,8 @@
 
 import UIKit
 
-public let kAuthLoginSucessNotiName = "loginSucessNotiName"
+class MyAccountViewController: BaseViewController {
 
-class LoginViewController: BaseViewController {
-
-    
-    @IBAction func onLoginClick(_ sender: UIButton) {
-        
-        self.navigationController?.dismiss(animated: true, completion: {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
-        })
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

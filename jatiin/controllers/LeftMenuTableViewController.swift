@@ -14,6 +14,8 @@ class LeftMenuTableViewController: UITableViewController {
 
     weak var deletage: LeftMenuTableViewControllerDelegate?
     
+    private var haveInit = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,19 @@ class LeftMenuTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !haveInit {
+            print("viewDidAppear haveInit")
+//            self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: UITableViewScrollPosition.top)
+            self .tableView(self.tableView, didSelectRowAt: IndexPath.init(row: 0, section: 0))
+            haveInit = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
