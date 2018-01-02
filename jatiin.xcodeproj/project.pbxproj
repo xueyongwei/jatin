@@ -30,6 +30,8 @@
 		DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368A1FDA87C800685366 /* CouponsViewController.swift */; };
 		DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368C1FDA87F900685366 /* MainViewManager.swift */; };
 		DE17368F1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */; };
+		DEE39F971FF8D737004A87A1 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39F961FF8D737004A87A1 /* Validate.swift */; };
+		DEE39FAF1FF8E79E004A87A1 /* XYWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,10 @@
 		DE17368A1FDA87C800685366 /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
 		DE17368C1FDA87F900685366 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
 		DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuManagerViewViewController.swift; sourceTree = "<group>"; };
+		DEE39F961FF8D737004A87A1 /* Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
+		DEE39FA01FF8DCDB004A87A1 /* jatiin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jatiin-Bridging-Header.h"; sourceTree = "<group>"; };
+		DEE39FAD1FF8E765004A87A1 /* APPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConst.h; sourceTree = "<group>"; };
+		DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYWNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,18 +157,21 @@
 		DE1736381FDA5F4D00685366 /* jatiin */ = {
 			isa = PBXGroup;
 			children = (
+				DEE39F951FF8D737004A87A1 /* Validate */,
 				DE17366E1FDA5FF100685366 /* controllers */,
 				DE17366F1FDA5FF100685366 /* model */,
 				DE17366D1FDA5FF100685366 /* view */,
 				DE1736391FDA5F4D00685366 /* AppDelegate.swift */,
 				DE17363B1FDA5F4D00685366 /* ViewController.swift */,
 				DE1736761FDA735D00685366 /* AcountTableViewController.swift */,
+				DEE39FAD1FF8E765004A87A1 /* APPConst.h */,
 				DE17363D1FDA5F4D00685366 /* Main.storyboard */,
 				DE1736781FDA74DD00685366 /* Auth.storyboard */,
 				DE1736401FDA5F4D00685366 /* Assets.xcassets */,
 				DE17367A1FDA755A00685366 /* logo.png */,
 				DE1736421FDA5F4D00685366 /* LaunchScreen.storyboard */,
 				DE1736451FDA5F4D00685366 /* Info.plist */,
+				DEE39FA01FF8DCDB004A87A1 /* jatiin-Bridging-Header.h */,
 			);
 			path = jatiin;
 			sourceTree = "<group>";
@@ -216,6 +225,15 @@
 				DE17368C1FDA87F900685366 /* MainViewManager.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		DEE39F951FF8D737004A87A1 /* Validate */ = {
+			isa = PBXGroup;
+			children = (
+				DEE39F961FF8D737004A87A1 /* Validate.swift */,
+				DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */,
+			);
+			path = Validate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +307,8 @@
 				TargetAttributes = {
 					DE1736351FDA5F4D00685366 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
 					};
 					DE1736491FDA5F4D00685366 = {
 						CreatedOnToolsVersion = 9.1;
@@ -360,14 +379,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-jatiin/Pods-jatiin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
@@ -420,7 +439,9 @@
 				DE1736871FDA879800685366 /* HelpViewController.swift in Sources */,
 				DE17367D1FDA794F00685366 /* LoginViewController.swift in Sources */,
 				DE1736891FDA87B500685366 /* MyAccountViewController.swift in Sources */,
+				DEE39F971FF8D737004A87A1 /* Validate.swift in Sources */,
 				DE1736851FDA878900685366 /* PartnersViewController.swift in Sources */,
+				DEE39FAF1FF8E79E004A87A1 /* XYWNetwork.swift in Sources */,
 				DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */,
 				DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */,
 				DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */,
@@ -598,11 +619,19 @@
 			baseConfigurationReference = 4B54828D9D5E02D0E61CBDC2 /* Pods-jatiin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = RF3D9852ET;
 				INFOPLIST_FILE = jatiin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "78f7d97d-d578-4574-913d-dac547bec07e";
+				PROVISIONING_PROFILE_SPECIFIER = "115IH InHouse: *";
+				SWIFT_OBJC_BRIDGING_HEADER = "jatiin/jatiin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -613,11 +642,16 @@
 			baseConfigurationReference = 6A06337BE639FC1BC4FF4192 /* Pods-jatiin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = jatiin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yuri.jatiin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "jatiin/jatiin-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

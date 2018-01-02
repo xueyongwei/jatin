@@ -3,7 +3,7 @@
 
 target 'jatiin' do
 #网络访问
-pod 'AFNetworking', '3.0'
+pod 'Alamofire', '~> 4.5'
 #提醒，吐司
 pod 'MBProgressHUD', '0.9.1'
 #自动布局

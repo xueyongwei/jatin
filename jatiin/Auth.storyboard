@@ -137,6 +137,10 @@
                         <viewLayoutGuide key="safeArea" id="jdc-Mc-bJa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="BBc-WT-utQ"/>
+                    <connections>
+                        <outlet property="pswTF" destination="lK2-VU-yQG" id="wih-Bp-ynj"/>
+                        <outlet property="usernameTF" destination="D8x-tV-BOi" id="hwI-Pb-ZIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ca-tO-3a2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +170,7 @@
                                         <rect key="frame" x="20" y="215" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmi-v5-4UZ">
                                         <rect key="frame" x="20" y="255" width="335" height="30"/>
@@ -181,7 +185,7 @@
                                         <rect key="frame" x="20" y="290" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-AS-wWn">
                                         <rect key="frame" x="20" y="350" width="335" height="50"/>
@@ -192,6 +196,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onRegisteClick:" destination="zSD-vW-ros" eventType="touchUpInside" id="Iho-ST-h5Z"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UF-Aj-Rhf">
                                         <rect key="frame" x="20" y="30" width="335" height="30"/>
@@ -221,7 +228,7 @@
                                         <rect key="frame" x="20" y="140" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,6 +273,12 @@
                         <viewLayoutGuide key="safeArea" id="aNQ-nP-ONN"/>
                     </view>
                     <navigationItem key="navigationItem" id="O2d-Fo-Nch"/>
+                    <connections>
+                        <outlet property="confirmTF" destination="akg-PT-xx1" id="Ut0-kG-ILf"/>
+                        <outlet property="emailTF" destination="y1N-JI-fun" id="X7s-yd-y3u"/>
+                        <outlet property="passwordTF" destination="Zrb-2f-zpX" id="xka-m8-9GJ"/>
+                        <outlet property="usernameTF" destination="vCJ-81-LBg" id="qnW-SI-rDr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cns-uq-blA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
