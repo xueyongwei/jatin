@@ -334,6 +334,9 @@
                                         <state key="normal" title="SUBMIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onNextClick:" destination="gvV-aO-BCE" eventType="touchUpInside" id="agA-tT-hqV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -366,6 +369,10 @@
                         <viewLayoutGuide key="safeArea" id="K5w-Ch-i4d"/>
                     </view>
                     <navigationItem key="navigationItem" id="zrd-Ty-U3w"/>
+                    <connections>
+                        <outlet property="emailTF" destination="0lL-sT-bVq" id="68S-4a-jEP"/>
+                        <outlet property="usernameTF" destination="5aL-eZ-Hjs" id="yrx-wE-A8s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3z-Ql-3ZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

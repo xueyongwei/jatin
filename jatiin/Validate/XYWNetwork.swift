@@ -47,7 +47,14 @@ class XYWNetwork {
         
         Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
     }
+    class func requestForgetPswd(username:String,email:String, completionHandler: @escaping (DataResponse<Any>) -> Void) {
+        
+        let urlStr = XYWNetwork.getForgetPswdUrl() + "username="+username+"&email="+email
+        
+        Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
+    }
     
+    //MARK: - Alert message
    class func showAlert(message:String,title:String?) ->Void {
         let alert = UIAlertView.init(title: title, message: message, delegate: nil, cancelButtonTitle: "OK")
         alert.show()
