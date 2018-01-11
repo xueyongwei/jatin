@@ -20,10 +20,12 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     var childrenViewControllerInfo: [String:Any]?
     var childrenViewControllerClassNames: [String]?
     
-    var currentChildrenViewControllerIndex :Int = 0
+    var currentChildrenViewControllerIndex :Int = -1//-1表示非法
     
     lazy var leftMenuManager :LeftMenuManagerViewViewController = {
-        return LeftMenuManagerViewViewController()
+        let leftMvc = LeftMenuManagerViewViewController()
+        leftMvc.menuBtn = self.menuButton
+        return leftMvc
     }()
     
     
@@ -50,7 +52,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeMainView), name: NSNotification.Name(kChangeMainViewNotificationName), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(leftMenuTableViewCLick(noti:)), name: NSNotification.Name(kLeftMenuTableViewClickIndexNotiName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(leftMenuTableViewCLick(noti:)), name: NSNotification.Name.LeftMenuTableViewClickIndex, object: nil)
     }
     //MARK: custom
     func customLeftMenuViewController() {
@@ -101,17 +103,35 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         corver.backgroundColor = UIColor.white
         self.navigationController?.view .addSubview(corver)
         
-        
-        let logVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        let authNavi = UINavigationController.init(rootViewController: logVC)
-        
-        self.navigationController?.present(authNavi, animated: true, completion: {
+        if let _ = UserDefaults.standard.string(forKey: "accesstoken") {
             corver.removeFromSuperview()
-        })
+            self.changeMainView(toIndex: 0)
+        }else{
+            self.obserLogin()
+            let logVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let authNavi = UINavigationController.init(rootViewController: logVC)
+            
+            self.navigationController?.present(authNavi, animated: true, completion: {
+                corver.removeFromSuperview()
+            })
+        }
+        
+        
         
         
         
     }
+    @objc func loadFirstVc(){
+        self.changeMainView(toIndex: 0)
+        self.removeObserverOfLogin()
+    }
+    func obserLogin() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadFirstVc), name: NSNotification.Name.LoginDidSucess, object: nil)
+    }
+    func removeObserverOfLogin() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.LoginDidSucess, object: nil)
+    }
+    
     //MARK: 回调事件
     @objc func initDataRequest() {
         
@@ -144,7 +164,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     }
     //MARK: 点击事件
     @IBAction func menuCLick(_ sender: UIButton) {
-        
+        self.view.endEditing(true)
         sender.isSelected = !sender.isSelected
         sender.isUserInteractionEnabled = false
         

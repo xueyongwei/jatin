@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3D76D9989D199D929B6DE52 /* Pods_jatiin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FB105B40769723BD01FDFB /* Pods_jatiin.framework */; };
+		DE0A18A12004A53400412A2F /* MBProgressHUD+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0A189F2004A53400412A2F /* MBProgressHUD+Utility.m */; };
 		DE17363A1FDA5F4D00685366 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1736391FDA5F4D00685366 /* AppDelegate.swift */; };
 		DE17363C1FDA5F4D00685366 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17363B1FDA5F4D00685366 /* ViewController.swift */; };
 		DE17363F1FDA5F4D00685366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE17363D1FDA5F4D00685366 /* Main.storyboard */; };
@@ -30,6 +31,9 @@
 		DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368A1FDA87C800685366 /* CouponsViewController.swift */; };
 		DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368C1FDA87F900685366 /* MainViewManager.swift */; };
 		DE17368F1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */; };
+		DE58EDD720070840003124DA /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDD620070840003124DA /* CouponDetailViewController.swift */; };
+		DE58EDD92007158D003124DA /* NSNotificationNameExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDD82007158D003124DA /* NSNotificationNameExten.swift */; };
+		DE58EE0020074ACF003124DA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDFF20074ACF003124DA /* BaseModel.swift */; };
 		DEE39F971FF8D737004A87A1 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39F961FF8D737004A87A1 /* Validate.swift */; };
 		DEE39FAF1FF8E79E004A87A1 /* XYWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +59,10 @@
 		4B54828D9D5E02D0E61CBDC2 /* Pods-jatiin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jatiin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jatiin/Pods-jatiin.debug.xcconfig"; sourceTree = "<group>"; };
 		6A06337BE639FC1BC4FF4192 /* Pods-jatiin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jatiin.release.xcconfig"; path = "Pods/Target Support Files/Pods-jatiin/Pods-jatiin.release.xcconfig"; sourceTree = "<group>"; };
 		72FB105B40769723BD01FDFB /* Pods_jatiin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jatiin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0A189B2004A36700412A2F /* jatiin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jatiin-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE0A189F2004A53400412A2F /* MBProgressHUD+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Utility.m"; sourceTree = "<group>"; };
+		DE0A18A02004A53400412A2F /* MBProgressHUD+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Utility.h"; sourceTree = "<group>"; };
+		DE0A18C42004AA5D00412A2F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		DE1736361FDA5F4D00685366 /* jatiin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jatiin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1736391FDA5F4D00685366 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE17363B1FDA5F4D00685366 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,8 +91,10 @@
 		DE17368A1FDA87C800685366 /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
 		DE17368C1FDA87F900685366 /* MainViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
 		DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuManagerViewViewController.swift; sourceTree = "<group>"; };
+		DE58EDD620070840003124DA /* CouponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
+		DE58EDD82007158D003124DA /* NSNotificationNameExten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationNameExten.swift; sourceTree = "<group>"; };
+		DE58EDFF20074ACF003124DA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		DEE39F961FF8D737004A87A1 /* Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
-		DEE39FA01FF8DCDB004A87A1 /* jatiin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jatiin-Bridging-Header.h"; sourceTree = "<group>"; };
 		DEE39FAD1FF8E765004A87A1 /* APPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConst.h; sourceTree = "<group>"; };
 		DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYWNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +173,6 @@
 				DE17366D1FDA5FF100685366 /* view */,
 				DE1736391FDA5F4D00685366 /* AppDelegate.swift */,
 				DE17363B1FDA5F4D00685366 /* ViewController.swift */,
-				DE1736761FDA735D00685366 /* AcountTableViewController.swift */,
 				DEE39FAD1FF8E765004A87A1 /* APPConst.h */,
 				DE17363D1FDA5F4D00685366 /* Main.storyboard */,
 				DE1736781FDA74DD00685366 /* Auth.storyboard */,
@@ -171,7 +180,8 @@
 				DE17367A1FDA755A00685366 /* logo.png */,
 				DE1736421FDA5F4D00685366 /* LaunchScreen.storyboard */,
 				DE1736451FDA5F4D00685366 /* Info.plist */,
-				DEE39FA01FF8DCDB004A87A1 /* jatiin-Bridging-Header.h */,
+				DE0A189B2004A36700412A2F /* jatiin-Bridging-Header.h */,
+				DE0A18C42004AA5D00412A2F /* PrefixHeader.pch */,
 			);
 			path = jatiin;
 			sourceTree = "<group>";
@@ -214,7 +224,9 @@
 				DE1736861FDA879800685366 /* HelpViewController.swift */,
 				DE1736881FDA87B500685366 /* MyAccountViewController.swift */,
 				DE17368A1FDA87C800685366 /* CouponsViewController.swift */,
+				DE58EDD620070840003124DA /* CouponDetailViewController.swift */,
 				DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */,
+				DE1736761FDA735D00685366 /* AcountTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -230,8 +242,12 @@
 		DEE39F951FF8D737004A87A1 /* Validate */ = {
 			isa = PBXGroup;
 			children = (
+				DE0A18A02004A53400412A2F /* MBProgressHUD+Utility.h */,
+				DE0A189F2004A53400412A2F /* MBProgressHUD+Utility.m */,
 				DEE39F961FF8D737004A87A1 /* Validate.swift */,
 				DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */,
+				DE58EDD82007158D003124DA /* NSNotificationNameExten.swift */,
+				DE58EDFF20074ACF003124DA /* BaseModel.swift */,
 			);
 			path = Validate;
 			sourceTree = "<group>";
@@ -382,6 +398,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -389,6 +406,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,12 +455,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1736871FDA879800685366 /* HelpViewController.swift in Sources */,
+				DE58EDD92007158D003124DA /* NSNotificationNameExten.swift in Sources */,
 				DE17367D1FDA794F00685366 /* LoginViewController.swift in Sources */,
+				DE0A18A12004A53400412A2F /* MBProgressHUD+Utility.m in Sources */,
 				DE1736891FDA87B500685366 /* MyAccountViewController.swift in Sources */,
 				DEE39F971FF8D737004A87A1 /* Validate.swift in Sources */,
 				DE1736851FDA878900685366 /* PartnersViewController.swift in Sources */,
 				DEE39FAF1FF8E79E004A87A1 /* XYWNetwork.swift in Sources */,
 				DE1736711FDA600E00685366 /* LeftMenuView.swift in Sources */,
+				DE58EE0020074ACF003124DA /* BaseModel.swift in Sources */,
+				DE58EDD720070840003124DA /* CouponDetailViewController.swift in Sources */,
 				DE17368D1FDA87F900685366 /* MainViewManager.swift in Sources */,
 				DE17367F1FDA795700685366 /* RegisterViewController.swift in Sources */,
 				DE17368B1FDA87C800685366 /* CouponsViewController.swift in Sources */,

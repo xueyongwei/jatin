@@ -11,7 +11,6 @@ protocol LeftMenuTableViewControllerDelegate:NSObjectProtocol {
     func LeftMenuTableViewControllerDidSelectedIndexPath(indexPath:IndexPath)
 }
 
-public let kLeftMenuTableViewClickIndexNotiName = "kLeftMenuTableViewClickIndexNotiName"
 
 class LeftMenuTableViewController: UITableViewController {
 
@@ -24,13 +23,14 @@ class LeftMenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.allowsSelection = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        
+        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +45,7 @@ class LeftMenuTableViewController: UITableViewController {
 //            self.tableView(self.tableView, didSelectRowAt: firstRow)
 //            haveInit = true
 //        }
-        self.tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +68,8 @@ class LeftMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
 //        self.deletage?.LeftMenuTableViewControllerDidSelectedIndexPath(indexPath: indexPath)
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLeftMenuTableViewClickIndexNotiName), object: indexPath, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name.LeftMenuTableViewClickIndex, object: indexPath)
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kLeftMenuTableViewClickIndexNotiName), object: indexPath, userInfo: nil)
         
     }
     /*
@@ -128,3 +128,4 @@ class LeftMenuTableViewController: UITableViewController {
     */
 
 }
+

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public let kAuthLoginSucessNotiName = "loginSucessNotiName"
 
 class LoginViewController: BaseViewController {
@@ -29,6 +30,7 @@ class LoginViewController: BaseViewController {
             XYWNetwork.showAlert(message: "密码至少5位", title: nil)
             return
         }
+        
         XYWNetwork.requestLogin(username: username, paswd: pswd) { [weak self](response) in
             switch response.result {
             case .success(let json):
@@ -43,9 +45,13 @@ class LoginViewController: BaseViewController {
                 if code == 0 {
                     XYWNetwork.showAlert(message: msg, title: nil)
                 }else {
+                    
+                    let token = data["accesstoken"]
+                    UserDefaults.standard.set(token, forKey: "accesstoken")
                     XYWNetwork.showAlert(message: msg, title: nil)
                     self?.navigationController?.dismiss(animated: true, completion: {
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
+                        
                     })
                 }
                 

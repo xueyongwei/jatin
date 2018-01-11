@@ -10,6 +10,7 @@ pod 'MBProgressHUD', '0.9.1'
 pod 'SnapKit', '~> 4.0.0'
 #提供更多功能
 pod 'YYKit', '0.9.6'
+pod 'SwiftyJSON'
 use_frameworks!
 end
 

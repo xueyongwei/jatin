@@ -12,6 +12,7 @@ class LeftMenuManagerViewViewController: BaseViewController {
 
     public var leftMeauTableViewController:LeftMenuTableViewController!
     
+    public weak var menuBtn:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,11 @@ class LeftMenuManagerViewViewController: BaseViewController {
             maker.leading.equalTo(-YYScreenSize().width*0.5)
         }
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        menuBtn.isSelected = false
+        self.hiddenMenu()
+    }
     public func showMenu(onView:UIView){
         if self.view.superview == nil {
             onView .addSubview(self.view)

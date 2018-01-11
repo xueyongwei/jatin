@@ -10,9 +10,11 @@ import UIKit
 
 class AcountTableViewController: UITableViewController {
 
+    var dataSource:Array?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "Detail"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
