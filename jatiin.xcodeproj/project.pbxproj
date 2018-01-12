@@ -34,6 +34,7 @@
 		DE58EDD720070840003124DA /* CouponDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDD620070840003124DA /* CouponDetailViewController.swift */; };
 		DE58EDD92007158D003124DA /* NSNotificationNameExten.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDD82007158D003124DA /* NSNotificationNameExten.swift */; };
 		DE58EE0020074ACF003124DA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58EDFF20074ACF003124DA /* BaseModel.swift */; };
+		DED316D62008B922007DD270 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED316D52008B922007DD270 /* ProfileTableViewController.swift */; };
 		DEE39F971FF8D737004A87A1 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39F961FF8D737004A87A1 /* Validate.swift */; };
 		DEE39FAF1FF8E79E004A87A1 /* XYWNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		DE58EDD620070840003124DA /* CouponDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDetailViewController.swift; sourceTree = "<group>"; };
 		DE58EDD82007158D003124DA /* NSNotificationNameExten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationNameExten.swift; sourceTree = "<group>"; };
 		DE58EDFF20074ACF003124DA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		DED316D52008B922007DD270 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		DEE39F961FF8D737004A87A1 /* Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 		DEE39FAD1FF8E765004A87A1 /* APPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPConst.h; sourceTree = "<group>"; };
 		DEE39FAE1FF8E79E004A87A1 /* XYWNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYWNetwork.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				DE58EDD620070840003124DA /* CouponDetailViewController.swift */,
 				DE17368E1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift */,
 				DE1736761FDA735D00685366 /* AcountTableViewController.swift */,
+				DED316D52008B922007DD270 /* ProfileTableViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				DE17363C1FDA5F4D00685366 /* ViewController.swift in Sources */,
 				DE1736811FDA796200685366 /* ForgetPasswordViewController.swift in Sources */,
 				DE17363A1FDA5F4D00685366 /* AppDelegate.swift in Sources */,
+				DED316D62008B922007DD270 /* ProfileTableViewController.swift in Sources */,
 				DE17368F1FDA9A4500685366 /* LeftMenuManagerViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

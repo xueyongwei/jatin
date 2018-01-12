@@ -15,21 +15,42 @@ class MyAccountViewController: BaseViewController {
     @IBOutlet weak var emailLabel: UITextField!
     
     @IBOutlet weak var phoneLabel: UITextField!
-    @IBOutlet weak var passwordLabel: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.customUI()
         // Do any additional setup after loading the view.
     }
+    func customUI() {
+       if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
+            self.nameLabel.text = data["username"]
+        self.phoneLabel.text = data["phone"]
+        self.emailLabel.text = data["email"]
+        }
+        
+    }
+    @IBAction func onLogoutClick(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: "accesstoken")
+        NotificationCenter.default.post(name: NSNotification.Name.AuthShouldCheckAgain, object: nil)
+//        let logVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//        let authNavi = UINavigationController.init(rootViewController: logVC)
+//
+//        self.navigationController?.present(authNavi, animated: true, completion: {
+//        })
+    }
+    
+    
     @IBAction func onConfirmClick(_ sender: UIButton) {
-        guard let name = self.nameLabel.text,let phone = self.phoneLabel.text,let email = self.emailLabel.text ,let pwd = self.passwordLabel.text else {
+        guard let name = self.nameLabel.text,let phone = self.phoneLabel.text,let email = self.emailLabel.text else {
             return
         }
         XYWNetwork.requestEditPrfile(email: email, username: name, pwd: pwd, phone: phone) { (response) in
             switch response.result {
                 
             case .success(let json):
+                
                 guard let data = json as? Dictionary<String, Any> else{
                     return
                 }

@@ -47,6 +47,16 @@ class LoginViewController: BaseViewController {
                 }else {
                     
                     let token = data["accesstoken"]
+                    var dic = [String:String]()
+                    if let userData = data["data"] as? Dictionary<String,Any> {
+                        
+                        dic["email"] = userData["email"] as? String ?? ""
+                        dic["id"] = userData["id"] as? String ?? ""
+                        dic["password"] = userData["password"] as? String ?? ""
+                        dic["phone"] = userData["phone"] as? String ?? ""
+                        dic["username"] = userData["username"] as? String ?? ""
+                    }
+                    UserDefaults.standard.set(dic, forKey: "userData")
                     UserDefaults.standard.set(token, forKey: "accesstoken")
                     XYWNetwork.showAlert(message: msg, title: nil)
                     self?.navigationController?.dismiss(animated: true, completion: {
@@ -86,4 +96,37 @@ class LoginViewController: BaseViewController {
      */
     
 }
+
+//- key : "data"
+//▿ value : 10 elements
+//▿ 0 : 2 elements
+//- key : phone
+//- value : <null>
+//▿ 1 : 2 elements
+//- key : password
+//- value : c56191dfc1b9b38628b90b50f831d163
+//▿ 2 : 2 elements
+//- key : score
+//- value : 0
+//▿ 3 : 2 elements
+//- key : id
+//- value : 7
+//▿ 4 : 2 elements
+//- key : update_time
+//- value : <null>
+//▿ 5 : 2 elements
+//- key : is_delete
+//- value : 1
+//▿ 6 : 2 elements
+//- key : reason
+//- value : <null>
+//▿ 7 : 2 elements
+//- key : username
+//- value : user2
+//▿ 8 : 2 elements
+//- key : email
+//- value : xyw2@xyw.pub
+//▿ 9 : 2 elements
+//- key : create_time
+//- value : 1515146563
 

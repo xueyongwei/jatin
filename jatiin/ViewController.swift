@@ -15,6 +15,9 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
 
     @IBOutlet weak var menuButton: UIButton!
  
+    var naviNameLabel:UILabel!
+    var naviPointsLabel:UILabel!
+    
 //    var leftMenuViewTableViewController :LeftMenuTableViewControllerDelegate?
     
     var childrenViewControllerInfo: [String:Any]?
@@ -53,6 +56,8 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(changeMainView), name: NSNotification.Name(kChangeMainViewNotificationName), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(leftMenuTableViewCLick(noti:)), name: NSNotification.Name.LeftMenuTableViewClickIndex, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(checkAuth), name: NSNotification.Name.AuthShouldCheckAgain, object: nil)
     }
     //MARK: custom
     func customLeftMenuViewController() {
@@ -83,12 +88,14 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         let userNameLabel = UILabel.init(frame: CGRect(x: 0, y: 0, width: 100, height: 22))
         userNameLabel.textAlignment = NSTextAlignment.right
         userNameLabel.text = "Yuri"
+        self.naviNameLabel = userNameLabel
         infoView.addSubview(userNameLabel)
         
         let userCountLabel = UILabel.init(frame: CGRect(x: 0, y: 22, width: 100, height: 22))
         userCountLabel.textColor = UIColor.blue
         userCountLabel.text = "99"
         userCountLabel.textAlignment = NSTextAlignment.right
+        self.naviPointsLabel = userCountLabel
         infoView.addSubview(userCountLabel)
         
         let rightBaritm = UIBarButtonItem.init(customView: infoView)
@@ -98,14 +105,15 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
     }
     
-    func checkAuth() {
+    @objc func checkAuth() {
         let corver = UIView.init(frame: UIScreen.main.bounds)
         corver.backgroundColor = UIColor.white
         self.navigationController?.view .addSubview(corver)
         
         if let _ = UserDefaults.standard.string(forKey: "accesstoken") {
             corver.removeFromSuperview()
-            self.changeMainView(toIndex: 0)
+            self.loadFirstVc()
+//            self.changeMainView(toIndex: 0)
         }else{
             self.obserLogin()
             let logVC = UIStoryboard.init(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
@@ -121,9 +129,18 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         
         
     }
+    
+    
     @objc func loadFirstVc(){
         self.changeMainView(toIndex: 0)
         self.removeObserverOfLogin()
+        
+        let userData = UserDefaults.standard.object(forKey: "userData")
+        if let data = userData as? Dictionary<String,String> {
+            let userName = data["username"]
+            self.naviNameLabel.text = userName
+        }
+        self.requestPoints()
     }
     func obserLogin() {
         NotificationCenter.default.addObserver(self, selector: #selector(loadFirstVc), name: NSNotification.Name.LoginDidSucess, object: nil)
@@ -131,10 +148,35 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     func removeObserverOfLogin() {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.LoginDidSucess, object: nil)
     }
-    
+    //MARK: 请求网络
+    @objc func requestPoints(){
+        XYWNetwork.requestPoints { (response) in
+            switch response.result {
+            case .success(let json):
+                guard let resultDic = json as? Dictionary<String,Any> else {
+                    XYWNetwork.showAlert(message: "数据格式有误", title: nil)
+                    return
+                }
+                guard let code = resultDic["code"] as? Int,let msg = resultDic["msg"] as? String else {
+                    XYWNetwork.showAlert(message: "数据格式有误", title: nil)
+                    return
+                }
+                if code == 0 {
+                    XYWNetwork.showAlert(message: msg, title: nil)
+                }else {
+                    if let points = resultDic["data"] as? Int {
+                        self.naviPointsLabel.text = "\(points)"
+                    }
+                    
+                }
+            case .failure(let error):
+                XYWNetwork.showAlert(message: error.localizedDescription, title: nil)
+            }
+        }
+    }
     //MARK: 回调事件
     @objc func initDataRequest() {
-        
+        self.loadFirstVc()
     }
     @objc func leftMenuTableViewCLick(noti:Notification){
         let indexPath = noti.object as! NSIndexPath

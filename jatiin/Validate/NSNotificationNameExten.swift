@@ -11,4 +11,5 @@ import Foundation
 extension NSNotification.Name {
     static let LoginDidSucess = Notification.Name("LoginDidSucess")
     static let LeftMenuTableViewClickIndex = Notification.Name("LeftMenuTableViewClickIndex")
+    static let AuthShouldCheckAgain = Notification.Name("AuthShouldCheckAgain")
 }

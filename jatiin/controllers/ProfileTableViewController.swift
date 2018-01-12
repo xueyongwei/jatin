@@ -1,28 +1,28 @@
+
 //
-//  AcountTableViewController.swift
+//  ProfileTableViewController.swift
 //  jatiin
 //
-//  Created by 西方 on 2017/12/8.
-//  Copyright © 2017年 xueyongwei. All rights reserved.
+//  Created by 西方 on 2018/1/12.
+//  Copyright © 2018年 xueyongwei. All rights reserved.
 //
 
 import UIKit
 
-class AcountTableViewController: UITableViewController {
-
-    var dataSource:Array<Any>?
+class ProfileTableViewController: UITableViewController {
+    @IBOutlet weak var userIDLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var useremailLabel: UILabel!
+    @IBOutlet weak var userphoneLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Detail"
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    func requestData() {
-        
     }
 
     override func didReceiveMemoryWarning() {

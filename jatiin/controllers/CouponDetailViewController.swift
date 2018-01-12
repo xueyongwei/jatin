@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class CouponDetailViewController: UIViewController {
 
     var coupon :Coupon?
