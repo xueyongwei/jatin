@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+class AcountItem {
+    
+}
 
 class AcountTableViewController: UITableViewController {
 
-    var dataSource:Array<Any>?
+    var dataSource = [AcountItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Detail"
+        self.requestData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,7 +28,15 @@ class AcountTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func requestData() {
-        
+        XYWNetwork.requestPointsDetailList(start: 1, limit: 20) { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+            case .failure(let error):
+                XYWNetwork.showAlert(message: error.localizedDescription, title: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +47,12 @@ class AcountTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dataSource.count
     }
 
     /*

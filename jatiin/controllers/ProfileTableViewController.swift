@@ -18,6 +18,9 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.customUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(customUI), name: Notification.Name.CountShouldRefresh, object: nil)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,22 +28,54 @@ class ProfileTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    @objc func customUI() {
+        if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
+            self.userIDLabel.text = "userID: \(data["id"] ?? "private")"
+            self.usernameLabel.text = "userName: \(data["username"] ?? "private")"
+            self.userphoneLabel.text = "phone: \(data["phone"] ?? "not set")"
+            self.useremailLabel.text = "email: \(data["email"] ?? "private")"
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func logOut()  {
+        UserDefaults.standard.removeObject(forKey: "accesstoken")
+        NotificationCenter.default.post(name: NSNotification.Name.AuthShouldCheckAgain, object: nil)
+    }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            switch indexPath.row {
+//            case 0 :
+//                let count = MyAccountViewController.initFromeStoryBord(named: "Main")
+////                let count = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyAccountViewController")
+//                self.navigationController?.pushViewController(count, animated: true)
+//            case 1 :
+//                let edipswd = EditPasswordViewController.initFromeStoryBord(named: "Main")
+//                self.navigationController?.pushViewController(edipswd, animated: true)
+            case 2 :
+                self.logOut()
+            default:
+                break
+            }
+        }
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

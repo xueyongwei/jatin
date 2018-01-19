@@ -1,5 +1,5 @@
 //
-//  MyAccountViewController.swift
+//  EditAccountViewController
 //  jatiin
 //
 //  Created by 西方 on 2017/12/8.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MyAccountViewController: BaseViewController {
+class EditAccountViewController: BaseViewController {
 
     @IBOutlet weak var nameLabel: UITextField!
     
-    @IBOutlet weak var emailLabel: UITextField!
+//    @IBOutlet weak var emailLabel: UITextField!
     
     @IBOutlet weak var phoneLabel: UITextField!
     
@@ -27,7 +27,7 @@ class MyAccountViewController: BaseViewController {
        if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
             self.nameLabel.text = data["username"]
         self.phoneLabel.text = data["phone"]
-        self.emailLabel.text = data["email"]
+//        self.emailLabel.text = data["email"]
         }
         
     }
@@ -43,10 +43,16 @@ class MyAccountViewController: BaseViewController {
     
     
     @IBAction func onConfirmClick(_ sender: UIButton) {
-        guard let name = self.nameLabel.text,let phone = self.phoneLabel.text,let email = self.emailLabel.text else {
+        guard let name = self.nameLabel.text,let phone = self.phoneLabel.text else {
             return
         }
-        XYWNetwork.requestEditPrfile(email: email, username: name, pwd: pwd, phone: phone) { (response) in
+        var email = ""
+        if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
+            email = data["email"] ?? ""
+        }
+        
+        
+        XYWNetwork.requestEditPrfile(email: email, username: name, pwd: "", phone: phone) { (response) in
             switch response.result {
                 
             case .success(let json):
@@ -60,6 +66,15 @@ class MyAccountViewController: BaseViewController {
                 
                 if code == 1 {
                     XYWNetwork.showAlert(message: msg, title: nil)
+                    
+                    if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
+                        var newdata = data
+                        newdata["username"] = name
+                        newdata["phone"] = phone
+                        UserDefaults.standard.set(newdata, forKey: "userData")
+                        UserDefaults.standard.synchronize()
+                    }
+                    NotificationCenter.default.post(name: NSNotification.Name.CountShouldRefresh, object: nil)
                 }else {
                     XYWNetwork.showAlert(message: msg, title: nil)
                 }

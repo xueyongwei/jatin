@@ -36,6 +36,8 @@ class CouponsViewController: BaseViewController {
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
         self.requestData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(requestData), name: NSNotification.Name.LoginDidSucess, object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -45,7 +47,7 @@ class CouponsViewController: BaseViewController {
     }
     
 
-    func requestData() {
+    @objc func requestData() {
         XYWNetwork.requestCouponsList(start: 0, limit: 20) { (response) in
             switch response.result {
             case .success(let json):

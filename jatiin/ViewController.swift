@@ -62,9 +62,10 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
     //MARK: custom
     func customLeftMenuViewController() {
         
-        self.childrenViewControllerClassNames = ["CouponsViewController","MyAccountViewController","PartnersViewController","HelpViewController"]
+        self.childrenViewControllerClassNames = ["CouponsViewController","ProfileTableViewController","PartnersViewController","HelpViewController"]
         
         for className in self.childrenViewControllerClassNames! {
+            
             let cvc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: className)
             self.addChildViewController(cvc)
         }
