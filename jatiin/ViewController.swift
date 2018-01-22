@@ -58,6 +58,9 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(leftMenuTableViewCLick(noti:)), name: NSNotification.Name.LeftMenuTableViewClickIndex, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(checkAuth), name: NSNotification.Name.AuthShouldCheckAgain, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(requestPoints), name: NSNotification.Name.PointsShouldRefresh, object: nil)
+        
     }
     //MARK: custom
     func customLeftMenuViewController() {

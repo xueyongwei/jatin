@@ -41,7 +41,7 @@ class XYWNetwork {
     static func getCountPointsUrl() -> String {
         return  baseUrl + getPath() + "/user/getscore/shop/account?"
     }
-    static func getCountDetailUrl() -> String {
+    static func getPurchaseDetailUrl() -> String {
         return  baseUrl + getPath() + "/user/getlist/shop/accountdetail?"
     }
     static func getPath() -> String {
@@ -52,7 +52,7 @@ class XYWNetwork {
     class func requestPointsDetailList(start:Int,limit:Int,completionHandler: @escaping (DataResponse<Any>) -> Void){
         let (isSucess,token) = self.checkAuthInfo()
         if isSucess {
-            let urlStr = XYWNetwork.getCouponsListUrl() + "accesstoken=\(token)&start=\(start)&limit=\(limit)"
+            let urlStr = XYWNetwork.getPurchaseDetailUrl() + "accesstoken=\(token)&start=\(start)&limit=\(limit)"
             //            let urlStr = XYWNetwork.getCouponsListUrl() + "accesstoken=\(String(describing: token))&start=\(start)&limit=\(limit)"
             Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
         }else{
@@ -157,6 +157,22 @@ class XYWNetwork {
             completionHandler(errResponse)
             return
         }
+    }
+    class func requestPurchaseDetail(start:Int,limit:Int,completionHandler: @escaping (DataResponse<Any>) -> Void){
+        let (isSucess,token) = self.checkAuthInfo()
+        if isSucess {
+            let urlStr = XYWNetwork.getPurchaseDetailUrl() + "accesstoken=\(token)&start=\(start)&limit=\(limit)"
+            //            let urlStr = XYWNetwork.getCouponsListUrl() + "accesstoken=\(String(describing: token))&start=\(start)&limit=\(limit)"
+            Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
+        }else{
+            let result = Result<Any>.failure(AuthInfoError.notAuthed)
+            
+            let errResponse = DataResponse.init(request: nil, response: nil, data: nil, result: result)
+            
+            completionHandler(errResponse)
+            return
+        }
+        
     }
     
     class func checkAuthInfo() -> (isSucess:Bool,token:String) {

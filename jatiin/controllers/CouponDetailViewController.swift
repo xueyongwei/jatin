@@ -73,6 +73,7 @@ class CouponDetailViewController: UIViewController {
                 
                 if code == 1 {
                     XYWNetwork.showAlert(message: msg, title: nil)
+                    NotificationCenter.default.post(name: Notification.Name.PointsShouldRefresh, object: nil)
                 }else {
                     XYWNetwork.showAlert(message: msg, title: nil)
                 }
