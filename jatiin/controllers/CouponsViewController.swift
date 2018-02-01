@@ -37,7 +37,6 @@ class CouponsViewController: BaseViewController {
         self.tableView.tableFooterView = UIView()
         self.requestData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(requestData), name: NSNotification.Name.LoginDidSucess, object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -68,6 +67,7 @@ class CouponsViewController: BaseViewController {
                         XYWNetwork.showAlert(message: "数据格式有误", title: nil)
                         return
                     }
+                    self.dataSource.removeAll()
                     for itm in dataArray {
                         guard let aid = (itm["id"] as? NSNumber)?.intValue else{
                             continue

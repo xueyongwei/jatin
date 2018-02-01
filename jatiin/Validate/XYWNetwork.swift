@@ -44,6 +44,7 @@ class XYWNetwork {
     static func getPurchaseDetailUrl() -> String {
         return  baseUrl + getPath() + "/user/getlist/shop/accountdetail?"
     }
+  
     static func getPath() -> String {
         return "app/api/v1"
     }
@@ -99,19 +100,43 @@ class XYWNetwork {
             return
         }
     }
+    
     class func requestLogin(username:String,paswd:String, completionHandler: @escaping (DataResponse<Any>) -> Void) {
         
         let urlStr = XYWNetwork.getLgoinUrl() + "username="+username+"&pwd="+paswd
         
         Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
     }
+    
     class func requestForgetPswd(username:String,email:String, completionHandler: @escaping (DataResponse<Any>) -> Void) {
         
         let urlStr = XYWNetwork.getForgetPswdUrl() + "username="+username+"&email="+email
         
         Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
     }
-  
+    
+    class func requestEditPswd(newpswd:String, completionHandler: @escaping (DataResponse<Any>) -> Void) {
+        
+        let (isSucess,token) = self.checkAuthInfo()
+        if isSucess {
+            let urlStr = XYWNetwork.getForgetPswdUrl()
+            var email = "foo@ba.com"
+            if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
+                email = "email: \(data["email"] ?? "private")"
+            }
+            let param = ["accesstoken":token,"email":email,"newpwd":newpswd]
+            
+             Alamofire.request(urlStr, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: completionHandler)
+        }else{
+            let result = Result<Any>.failure(AuthInfoError.notAuthed)
+            
+            let errResponse = DataResponse.init(request: nil, response: nil, data: nil, result: result)
+            
+            completionHandler(errResponse)
+            return
+        }
+       
+    }
     enum AuthInfoError :Error{
         case notAuthed
         case authExceed

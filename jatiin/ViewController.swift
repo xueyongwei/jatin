@@ -51,7 +51,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
 //    }
     
     func registNotificationCenter()  {
-        NotificationCenter.default.addObserver(self, selector: #selector(initDataRequest), name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadFirstVc), name: NSNotification.Name(rawValue: kAuthLoginSucessNotiName), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeMainView), name: NSNotification.Name(kChangeMainViewNotificationName), object: nil)
         
@@ -144,6 +144,10 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
             let userName = data["username"]
             self.naviNameLabel.text = userName
         }
+        
+        let coup = self.childViewControllers[currentChildrenViewControllerIndex] as! CouponsViewController
+        coup.requestData()
+        
         self.requestPoints()
     }
     func obserLogin() {
@@ -179,9 +183,7 @@ class ViewController: UIViewController,LeftMenuTableViewControllerDelegate {
         }
     }
     //MARK: 回调事件
-    @objc func initDataRequest() {
-        self.loadFirstVc()
-    }
+
     @objc func leftMenuTableViewCLick(noti:Notification){
         let indexPath = noti.object as! NSIndexPath
         self.changeMainView(toIndex: indexPath.section)

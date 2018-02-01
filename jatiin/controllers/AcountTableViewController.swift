@@ -28,7 +28,7 @@ class AcountTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func requestData() {
-        XYWNetwork.requestPointsDetailList(start: 1, limit: 20) { (response) in
+        XYWNetwork.requestPointsDetailList(start: 0, limit: 100) { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -39,6 +39,10 @@ class AcountTableViewController: UITableViewController {
         }
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
