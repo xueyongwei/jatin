@@ -30,6 +30,7 @@ class EditPasswordViewController: UIViewController {
                 case .success(let json):
                     if let data = json as? Dictionary<String, Any> {
                         if let code = data["code"] as? Int,let msg = data["msg"] as? String{
+                            print(data)
                             if code == 0 {
                                 XYWNetwork.showAlert(message:msg, title: nil)
                             }else {

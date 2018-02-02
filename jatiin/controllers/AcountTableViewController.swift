@@ -8,14 +8,42 @@
 
 import UIKit
 import SwiftyJSON
-
-class AcountItem {
+class ConsumeTableViewCell:UITableViewCell {
     
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    var model:ConsumeItem? {
+        didSet{
+            self.nameLabel.text = model?.name
+            self.priceLabel.text = String.init(format: "paied:%d points", (model?.price)!)
+            let dataFormate = DateFormatter.init()
+            dataFormate.dateFormat = "YY-MM-dd hh:mm"
+            
+            self.timeLabel.text = dataFormate.string(from: (model?.create_time)!)
+           
+            if let imgurlStr = model?.picurlstr, let imgUrl = URL.init(string: imgurlStr){
+                self.imgView.setImageWith(imgUrl, placeholder: UIImage.init(named:"logo"))
+            }
+            
+        }
+    }
+    
+}
+
+class ConsumeItem {
+    var name:String = ""
+    var picurlstr:String = ""
+    var price:Int = 0
+    var intro:String = ""
+    var create_time:Date = Date()
 }
 
 class AcountTableViewController: UITableViewController {
 
-    var dataSource = [AcountItem]()
+    var dataSource = [ConsumeItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +60,21 @@ class AcountTableViewController: UITableViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
+                if let datas = json["data"].array {
+                    self.dataSource.removeAll()
+                    for data in datas{
+                        let con = ConsumeItem.init()
+                        con.name = data["name"].stringValue
+                        con.picurlstr = data["picurlstr"].stringValue
+                        con.price = data["price"].intValue
+                        let tim = data["create_time"].doubleValue
+                        let date = Date.init(timeIntervalSince1970: tim)
+                        con.create_time = date
+//                        self.dataSource.insert(con, at: 0)
+                        self.dataSource.append(con)
+                    }
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 XYWNetwork.showAlert(message: error.localizedDescription, title: nil)
             }
@@ -59,15 +101,16 @@ class AcountTableViewController: UITableViewController {
         return self.dataSource.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ConsumeTableViewCell", for: indexPath) as! ConsumeTableViewCell
+        
+        let amodel = self.dataSource[indexPath.row]
+        cell.model = amodel
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

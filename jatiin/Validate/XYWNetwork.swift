@@ -11,7 +11,8 @@ import Alamofire
 
 
 class XYWNetwork {
-    static let baseUrl = "http://localhost:8888/"
+//    static let baseUrl = "http://localhost:8888/"
+    static let baseUrl = "http://192.168.34.176:8888/"
     
     //MARK: - Get URL
     static func getRegisterUrl() -> String {
@@ -54,6 +55,7 @@ class XYWNetwork {
         let (isSucess,token) = self.checkAuthInfo()
         if isSucess {
             let urlStr = XYWNetwork.getPurchaseDetailUrl() + "accesstoken=\(token)&start=\(start)&limit=\(limit)"
+            print("request url = \(urlStr) \n ")
             //            let urlStr = XYWNetwork.getCouponsListUrl() + "accesstoken=\(String(describing: token))&start=\(start)&limit=\(limit)"
             Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
         }else{
@@ -119,14 +121,15 @@ class XYWNetwork {
         
         let (isSucess,token) = self.checkAuthInfo()
         if isSucess {
-            let urlStr = XYWNetwork.getForgetPswdUrl()
+            let urlStr = XYWNetwork.getChangePswdUrl()
             var email = "foo@ba.com"
             if let data = UserDefaults.standard.object(forKey: "userData") as? Dictionary<String,String>{
-                email = "email: \(data["email"] ?? "private")"
+                email = data["email"] ?? "foo@ba.com"
             }
             let param = ["accesstoken":token,"email":email,"newpwd":newpswd]
+            print("request url = \(urlStr) \n POST param = \(param)")
             
-             Alamofire.request(urlStr, method: .post, parameters: param, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: completionHandler)
+             Alamofire.request(urlStr, method: HTTPMethod.post, parameters: param, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: completionHandler)
         }else{
             let result = Result<Any>.failure(AuthInfoError.notAuthed)
             
@@ -172,6 +175,7 @@ class XYWNetwork {
         let (isSucess,token) = self.checkAuthInfo()
         if isSucess {
             let urlStr = XYWNetwork.getPurchaseCouponsUrl() + "accesstoken=\(token)&goodsid=\(goodsid)&score=\(score)"
+            print("request url = \(urlStr)")
             Alamofire.request(urlStr).responseJSON(completionHandler: completionHandler)
             
         }else{
